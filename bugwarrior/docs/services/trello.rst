@@ -17,7 +17,7 @@ Options
 
 .. describe:: trello.include_boards
 
-   The list of board to include. If omitted, bugwarrior will use all boards
+   The list of boards to include. If omitted, bugwarrior will use all boards
    the authenticated user is a member of.
    This can be either the board ids of the board "short links".  The latter is
    the easiest option as it is part of the board URL: in your browser, navigate
@@ -27,6 +27,13 @@ Options
 
    .. image:: pictures/trello_url.png
       :height: 1cm
+
+.. describe:: trello.exclude_closed_boards
+
+   Whether to exclude "closed" boards when searching for boards.  This
+   option does not affect ``trello.include_boards``.  If true, closed
+   boards will not be imported; if false, closed boards will be
+   imported.  Default is false.
 
 .. describe:: trello.include_lists
 
@@ -92,6 +99,15 @@ Feel free to use any of the configuration options described in
 
 Service Features
 ----------------
+
+Exclude Closed Boards
++++++++++++++++++++++
+
+The default configuration imports cards from closed (archived) boards.
+To exclude closed boards from importing::
+
+    trello.exclude_closed_boards = True
+
 
 Include and Exclude Certain Lists
 +++++++++++++++++++++++++++++++++

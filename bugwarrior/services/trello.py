@@ -133,7 +133,11 @@ class TrelloService(IssueService, ServiceClient):
                 yield self.api_request(
                     "/1/boards/{id}".format(id=boardid), fields='name')
         else:
-            boards = self.api_request("/1/members/me/boards", fields='name')
+            if self.config.get('exclude_closed_boards', False, asbool):
+                filter = 'open'
+            else:
+                filter = None
+            boards = self.api_request("/1/members/me/boards", fields='name', filter=filter)
             for board in boards:
                 yield board
 
