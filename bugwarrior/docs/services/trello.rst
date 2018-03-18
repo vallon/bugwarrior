@@ -161,6 +161,8 @@ Provided UDA Fields
 +-----------------------+-----------------------+---------------------+
 | ``trellocardid``      | Card ID               | Text (string)       |
 +-----------------------+-----------------------+---------------------+
+| ``trellocardnum``     | Card Number (unique within board) | Text (string) |
++-----------------------+-----------------------+---------------------+
 | ``trellolist``        | List name             | Text (string)       |
 +-----------------------+-----------------------+---------------------+
 | ``trelloshortlink``   | Short Link            | Text (string)       |
